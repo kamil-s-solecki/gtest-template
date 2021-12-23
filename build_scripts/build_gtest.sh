@@ -19,12 +19,6 @@ cp -a googletest/include/gtest ../gtest_include
 cp -a googlemock/include/gmock ../gtest_include
 mkdir -p ../gtest_lib
 cp -a lib/*so* ../gtest_lib
-: '
-# dereference links
-cd lib
-cp -L *.so ../../gtest_lib
-cd ..
-'
 
 # cleanup
 cd ..
