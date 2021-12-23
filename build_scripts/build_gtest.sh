@@ -2,7 +2,7 @@
 
 GTEST_VERSION="1.11.0"
 
-cd build/test
+cd build/tests
 
 wget "https://github.com/google/googletest/archive/refs/tags/release-${GTEST_VERSION}.tar.gz" -O gtest.tar.gz
 tar xf gtest.tar.gz
@@ -18,7 +18,13 @@ mkdir -p ../gtest_include
 cp -a googletest/include/gtest ../gtest_include
 cp -a googlemock/include/gmock ../gtest_include
 mkdir -p ../gtest_lib
-cp -a lib/*.so* ../gtest_lib
+cp -a lib/*so* ../gtest_lib
+: '
+# dereference links
+cd lib
+cp -L *.so ../../gtest_lib
+cd ..
+'
 
 # cleanup
 cd ..
