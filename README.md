@@ -1,10 +1,11 @@
 # Template C++ project with GoogleTest
 
-Compile and link sources from `src/` directory:
+Compile and link sources from `src/` directory just run:
 
 ```bash
-make # will create build/run executable. To change the name, set TARGET_EXEC variable in makefile
+make 
 ```
+This will create the `build/run` executable file. To change the name, set `TARGET_EXEC` variable in the `Makefile`
 
 Compile and link sources:
 
